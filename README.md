@@ -1,5 +1,4 @@
-````markdown
-# 🛡️ ThreatInbox  
+# 🛡️ ThreatInbox
 ### 🔐 AI-Powered Phishing Email Detection System (Streaming ML + Flask)
 
 ThreatInbox is a machine learning-based cybersecurity web application that detects phishing emails using NLP, URL analysis, and real-world streaming datasets — without requiring large dataset downloads.
@@ -14,6 +13,7 @@ ThreatInbox classifies emails as:
 - ✅ Safe
 
 It combines:
+
 - Natural Language Processing (TF-IDF)
 - URL feature extraction
 - Real-world streaming datasets
@@ -23,51 +23,52 @@ It combines:
 
 # ⚡ Features
 
-## 🤖 Machine Learning
-- TF-IDF text vectorization
-- URL extraction & analysis
-- Suspicious keyword detection
-- Long URL detection
-- Logistic Regression classifier
-- Confidence score prediction
-
-## 🌐 Web Application
-- Paste email text
-- Upload `.txt` email files
-- Instant prediction result
-- Clean UI with result page
-
-## ⚡ Real-World Dataset System
-- Streaming dataset loading (no full download)
-- Batch-based training (memory efficient)
-- Real phishing patterns
-- Lightweight ML pipeline
+| 🤖 Machine Learning | 🌐 Web Application | ⚡ Real-World Dataset System |
+|---------------------|-------------------|------------------------------|
+| TF-IDF text vectorization | Paste email text | Streaming dataset loading |
+| URL extraction & analysis | Upload `.txt` email files | Batch-based training |
+| Suspicious keyword detection | Instant prediction result | Real phishing patterns |
+| Long URL detection | Clean UI with result page | Lightweight ML pipeline |
+| Logistic Regression classifier |  |  |
+| Confidence score prediction |  |  |
 
 ---
 
 # 🧠 How It Works
 
 ```text
-User Input (Email Text / File Upload)
-          ↓
-Flask Backend (ThreatInbox.py)
-          ↓
-Feature Extraction
-   ├── TF-IDF Features
-   └── URL + Keyword Features
-          ↓
-ML Model (pipeline.pkl)
-          ↓
-Prediction Output
-   ├── Phishing ⚠️
-   └── Safe ✅
-````
+┌──────────────────────────────┐
+│ User Input                   │
+│ (Email Text / File Upload)   │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ Flask Backend                │
+│ (ThreatInbox.py)             │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ Feature Extraction           │
+│ • TF-IDF Features            │
+│ • URL + Keyword Features     │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ ML Model                     │
+│ (pipeline.pkl)               │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ Prediction Output            │
+│ ⚠️ Phishing / ✅ Safe        │
+└──────────────────────────────┘
+```
 
 ---
 
 # 🏗️ Project Structure
 
-```bash
+```text
 ThreatInbox/
 │
 ├── ThreatInbox.py                  # Flask Web App
@@ -78,7 +79,7 @@ ThreatInbox/
 │
 ├── templates/
 │   ├── index.html                  # Home Page
-│   └── result.html                # Result Page
+│   └── result.html                 # Result Page
 │
 ├── static/
 │   └── style.css                   # UI Styling
@@ -118,11 +119,11 @@ python ThreatInbox-train-model.py
 
 ### 🔥 What happens:
 
-* Loads dataset using streaming API
-* Fetches phishing emails in batches
-* Extracts features (TF-IDF + URL analysis)
-* Trains ML model
-* Saves `pipeline.pkl`
+- Loads dataset using streaming API
+- Fetches phishing emails in batches
+- Extracts features (TF-IDF + URL analysis)
+- Trains ML model
+- Saves `pipeline.pkl`
 
 ---
 
@@ -134,7 +135,7 @@ python ThreatInbox.py
 
 Open in browser:
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
@@ -146,7 +147,7 @@ http://127.0.0.1:5000
 
 Example:
 
-```
+```text
 Your bank account has been suspended.
 Click here: http://fake-login.com
 ```
@@ -157,9 +158,9 @@ Click **Analyze Email**
 
 ## 📁 Option 2: Upload File
 
-* Upload `.txt` email file
-* Click **Analyze Email**
-* Get prediction instantly
+- Upload `.txt` email file
+- Click **Analyze Email**
+- Get prediction instantly
 
 ---
 
@@ -167,14 +168,14 @@ Click **Analyze Email**
 
 ## ⚠️ Phishing Email
 
-```
+```text
 Prediction: Phishing
 Confidence: 96.3%
 ```
 
 ## ✅ Safe Email
 
-```
+```text
 Prediction: Safe
 Confidence: 92.1%
 ```
@@ -183,13 +184,13 @@ Confidence: 92.1%
 
 # 🧪 Machine Learning Features
 
-| Feature             | Description                                |
-| ------------------- | ------------------------------------------ |
-| TF-IDF              | Converts email text into numerical vectors |
-| URL Count           | Number of links in email                   |
-| Suspicious Words    | Detects phishing intent                    |
-| Long URLs           | Detects hidden/masked links                |
-| Logistic Regression | Final classifier                           |
+| Feature | Description |
+|----------|-------------|
+| TF-IDF | Converts email text into numerical vectors |
+| URL Count | Number of links in email |
+| Suspicious Words | Detects phishing intent |
+| Long URLs | Detects hidden/masked links |
+| Logistic Regression | Final classifier |
 
 ---
 
@@ -197,10 +198,10 @@ Confidence: 92.1%
 
 ThreatInbox uses streaming datasets instead of full downloads:
 
-✔ Loads only required data
-✔ Processes in batches
-✔ No memory overload
-✔ Real phishing patterns
+- ✅ Loads only required data
+- ✅ Processes in batches
+- ✅ No memory overload
+- ✅ Real phishing patterns
 
 ---
 
@@ -208,12 +209,12 @@ ThreatInbox uses streaming datasets instead of full downloads:
 
 ThreatInbox detects:
 
-* Fake login pages
-* Bank impersonation emails
-* Password reset scams
-* Urgency manipulation ("act now")
-* Suspicious/masked URLs
-* Credential theft attempts
+- Fake login pages
+- Bank impersonation emails
+- Password reset scams
+- Urgency manipulation ("act now")
+- Suspicious/masked URLs
+- Credential theft attempts
 
 ---
 
@@ -237,7 +238,7 @@ Flask Prediction Engine
 
 # 📦 Requirements
 
-```
+```text
 flask
 pandas
 scikit-learn
@@ -252,40 +253,40 @@ datasets
 
 ## 🤖 AI Enhancements
 
-* BERT-based phishing detection
-* Deep learning models
-* Multi-class classification (spam/phishing/legit)
+- BERT-based phishing detection
+- Deep learning models
+- Multi-class classification (spam/phishing/legit)
 
 ## 🔐 Security Enhancements
 
-* VirusTotal API integration
-* Domain reputation scoring
-* Email header analysis
-* SPF/DKIM validation
+- VirusTotal API integration
+- Domain reputation scoring
+- Email header analysis
+- SPF/DKIM validation
 
 ## 🌐 Web Enhancements
 
-* User authentication system
-* Admin dashboard
-* Email history tracking
-* Real-time monitoring system
+- User authentication system
+- Admin dashboard
+- Email history tracking
+- Real-time monitoring system
 
 ---
 
 # ☁️ Deployment Options
 
-| Platform            | Difficulty           |
-| ------------------- | -------------------- |
-| Render              | ⭐ Easy               |
-| Railway             | ⭐ Easy               |
-| PythonAnywhere      | ⭐ Easy               |
+| Platform | Difficulty |
+|-----------|------------|
+| Render | ⭐ Easy |
+| Railway | ⭐ Easy |
+| PythonAnywhere | ⭐ Easy |
 | Hugging Face Spaces | ⭐ Easy (ML friendly) |
 
 ---
 
 # 👨‍💻 Author
 
-ThreatInbox is a cybersecurity + machine learning project designed for real-world phishing detection using lightweight streaming datasets.
+ThreatInbox is a cybersecurity + machine learning project designed by adiiithyaan for real-world phishing detection using lightweight streaming datasets.
 
 ---
 
@@ -297,17 +298,6 @@ ThreatInbox is a cybersecurity + machine learning project designed for real-worl
 
 # 📜 License
 
-Copyright (c) 2026 adiiithyaan
+This project is proprietary and protected under a custom license.
 
-All rights reserved.
-
-This software and associated files are proprietary and confidential.
-
-No part of this software may be copied, modified, distributed, sold, sublicensed, or used in any form without explicit written permission from the copyright owner.
-
-Unauthorized use is strictly prohibited..
-
-```
-
----
-
+Unauthorized copying, redistribution, or commercial usage is prohibited without permission.
