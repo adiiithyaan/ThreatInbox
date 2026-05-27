@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Result - ThreatInbox</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>ThreatInbox</h1>
+    <p class="subtitle">Analysis Result</p>
+
+    {% if prediction == "Phishing" %}
+        <div class="result-box phishing">
+            ⚠️ This email is PHISHING
+        </div>
+    {% else %}
+        <div class="result-box safe">
+            ✅ This email is SAFE
+        </div>
+    {% endif %}
+
+    <p class="confidence">
+        Confidence: <b>{{ confidence }}%</b>
+    </p>
+
+    <a href="/" class="back-btn">Analyze Another Email</a>
+
+</div>
+
+</body>
+</html>

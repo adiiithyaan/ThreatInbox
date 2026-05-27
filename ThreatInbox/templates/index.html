@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>ThreatInbox</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>ThreatInbox</h1>
+    <p class="subtitle">AI-Powered Phishing Detector</p>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Paste Email</label>
+        <textarea name="email" placeholder="Paste suspicious email here..."></textarea>
+
+        <label>OR Upload File</label>
+        <input type="file" name="file">
+
+        <button type="submit" onclick="showLoading()">Analyze Email</button>
+
+        <div id="loading">🔍 Analyzing email...</div>
+
+    </form>
+
+</div>
+
+<script>
+function showLoading() {
+    document.getElementById("loading").style.display = "block";
+}
+</script>
+
+</body>
+</html>
